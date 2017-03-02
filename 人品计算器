@@ -1,0 +1,135 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <time.h>
+int main(void)
+{
+	time_t nowtime;
+	struct tm *timeinfo;
+	time(&nowtime);
+	timeinfo = localtime(&nowtime);
+	int year, month, day;
+	year = timeinfo->tm_year + 1900;
+	month = timeinfo->tm_mon + 1;
+	day = timeinfo->tm_mday;
+	int time_n = year + month + day;
+	int total = 0;
+	char str[20];
+	scanf("%s", str);
+	printf("名字：%s\n", str);
+	void *temp = str;
+	unsigned int *a = (unsigned int *)temp;
+	int len = strlen(a) / sizeof(*a);
+	int x;
+	for (x = 0; x < len; x++)
+	{
+		total += a[x];
+	}
+	//printf("%d",total);
+	srand(total + time_n);
+	int RP = rand() % 100;
+	printf("您的人品值为：%d\n", RP);
+	if (RP == 0)
+	{
+		printf("你一定不是人吧？怎么一点人品都没有？！");
+	}
+	if (RP > 0 && RP <= 5)
+	{
+		printf("算了，跟你没什么人品好谈的");
+	}
+	if (RP > 5 && RP <= 10)
+	{
+		printf("是我不好...不应该跟你谈人品问题的");
+	}
+	if (RP > 10 && RP <= 15)
+	{
+		printf("杀过人没有？放过火没有？你应该无恶不做吧？");
+	}
+	if (RP > 15 && RP <= 20)
+	{
+		printf("你貌似应该三岁就偷看隔壁大妈洗澡吧...");
+	}
+	if (RP > 20 && RP <= 25)
+	{
+		printf("你的人品之低下实在让人惊讶啊");
+	}
+	if (RP > 25 && RP <= 30)
+	{
+		printf("你的人品太差了，你应该有做坏事的嗜好吧？");
+	}
+	if (RP > 30 && RP <= 35)
+	{
+		printf("你的人品真差，肯定经常做偷鸡摸狗的事...");
+	}
+	if (RP > 35 && RP <= 40)
+	{
+		printf("你拥有如此差的人品请经常祈求佛祖保佑你吧"); 
+	}
+	if (RP > 40 && RP <= 45)
+	{
+		printf("老实交代...那些论坛上面经常出现的偷拍照是不是你的杰作");
+	}
+	if (RP > 45 && RP <= 50)
+	{
+		printf("你随地大小便的事没少干吧");
+	
+	}
+		if (RP > 50 && RP <= 55)
+	{
+		printf("你的人品太差了...稍不小心就会去干坏事吧？");
+	
+	}
+		if (RP > 55 && RP <= 60)
+	{
+		printf("你的人品很差了，要时刻克制自己做坏事的冲动哦");
+	
+	}
+		if (RP > 60 && RP <= 65)
+	{
+		printf("你的人品比较差了...要好好约束自己啊..."); 
+	
+	}
+		if (RP > 65 && RP <= 70)
+	{
+		printf("你的人品勉勉强强...要好好约束自己");
+	
+	}
+		if (RP > 70 && RP <= 75)
+	{
+		printf("有你这样的人品算是不错了");
+	
+	}
+		if (RP > 75 && RP <= 80)
+	{
+		printf("你有较好的人品...请继续保持...");
+	
+	}
+		if (RP > 80 && RP <= 85)
+	{
+		printf("你的人品不错，应该一表人才吧？");
+	
+	}
+		if (RP > 85 && RP <= 90)
+	{
+		printf("你的人品真好，做好事应该是你的爱好吧...");
+	
+	}
+		if (RP > 90 && RP <= 95)
+	{
+		printf("你的人品太好了...你就是当代活雷锋啊...");
+	
+	}
+		if (RP > 95 && RP <= 99)
+	{
+		printf("你是世人的榜样！");
+	
+	}
+		if (RP == 100)
+	{
+		printf("天啊！你不是人！你是神！！！");
+	} 
+		if (RP < 0)
+	{
+		printf("你的人品已经烂到负溢出了...");	
+	} 
+	return 0;
+}
